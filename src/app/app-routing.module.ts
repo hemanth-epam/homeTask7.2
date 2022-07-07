@@ -5,7 +5,6 @@ import { DeletedUsersComponent } from './deleted/deleted-users/deleted-users.com
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'active', component: ActiveUsersComponent },
   { path: 'deleted', component: DeletedUsersComponent },
@@ -13,6 +12,7 @@ const routes: Routes = [
     path: 'manage',
     loadChildren: () => import('./manage/manage.module').then((m) => m.ManageModule),
   },
+  { path: '*', component: HomeComponent },
 ];
 
 @NgModule({
